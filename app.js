@@ -62,7 +62,7 @@ app.use((req, res, next) => {
 
 
 app.use('/', require('./server/routes/main'));
-app.use('/', require('./server/routes/admin'));
+app.use('/', require('./server/routes/adminRoutes'));
 
 // Only start the server if not running on Vercel
 if (require.main === module) {
