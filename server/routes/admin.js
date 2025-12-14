@@ -27,7 +27,8 @@ const storage = new CloudinaryStorage({
   }
 });
 
-const upload = multer({ storage: storage });
+console.log("Admin Route Loaded - Initializing Multer");
+const upload = require('multer')({ storage: storage });
 
 
 /**
