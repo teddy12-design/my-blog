@@ -40,12 +40,15 @@ app.use(session({
   //cookie: { maxAge: new Date ( Date.now() + (3600000) ) } 
 }));
 
-app.use(express.static('public'));
+const path = require('path');
+
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Templating Engine
 app.use(expressLayout);
 app.set('layout', './layouts/main');
 app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
 
 
 app.locals.isActiveRoute = isActiveRoute;
